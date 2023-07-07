@@ -1,23 +1,12 @@
 {
 	"branches": ["main"],
 	"extends": "semantic-release-monorepo",
-  	"plugins":[
+	"plugins":[
+		["@semantic-release/npm", { "npmPublish": false }],
+		"@semantic-release/release-notes-generator",
+		"@semantic-release/github",
 		"@semantic-release/commit-analyzer",
-    	"@semantic-release/release-notes-generator",
-		["@semantic-release/changelog", {
-			"changelogTitle": "# Changelog"
-		}],
-		["@semantic-release/npm", {
-			"npmPublish": false
-		}],
-		["@semantic-release/git", {
-        	"message": "chore(release): ${nextRelease.version} [skip ci]",
-          	"assets": [
-				"CHANGELOG.md",
-				"dist/**/*.{js,css,html,svg}",
-				"package.json"
-			]
-    	}],
-		"@semantic-release/github"
-    ]
+		"@semantic-release/git",
+		"@semantic-release/changelog"
+	]
 }
