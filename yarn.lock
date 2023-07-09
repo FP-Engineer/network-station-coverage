@@ -1333,6 +1333,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"api-client@workspace:packages/api-client":
+  version: 0.0.0-use.local
+  resolution: "api-client@workspace:packages/api-client"
+  languageName: unknown
+  linkType: soft
+
+"api-schemes@workspace:packages/api-schemes":
+  version: 0.0.0-use.local
+  resolution: "api-schemes@workspace:packages/api-schemes"
+  languageName: unknown
+  linkType: soft
+
 "aproba@npm:^1.0.3 || ^2.0.0, aproba@npm:^2.0.0":
   version: 2.0.0
   resolution: "aproba@npm:2.0.0"
@@ -4784,6 +4796,18 @@ __metadata:
   checksum: 0e5508d83eae21a6ed0bd32b3a048c849741023811f06efa972800f4ad55eaa8205442e81c406ad051771f232c4ed3d3ee262f6c850bbcad9660f54a6471a4b9
   languageName: node
   linkType: hard
+
+"network-data-service@workspace:packages/network-data-service":
+  version: 0.0.0-use.local
+  resolution: "network-data-service@workspace:packages/network-data-service"
+  languageName: unknown
+  linkType: soft
+
+"network-monitor@workspace:packages/network-monitor":
+  version: 0.0.0-use.local
+  resolution: "network-monitor@workspace:packages/network-monitor"
+  languageName: unknown
+  linkType: soft
 
 "network-station-coverage@workspace:.":
   version: 0.0.0-use.local
