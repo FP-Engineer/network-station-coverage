@@ -1,0 +1,60 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Station API"
+	},
+	"paths": {
+		"/stations/": {
+			"get": {
+				"summary": "Get all stations",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Station"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Location": {
+				"type": "object",
+				"required": ["x", "y"],
+				"properties": {
+					"x": {
+						"type": "integer",
+						"minimum": 0
+					},
+					"y": {
+						"type": "integer",
+						"minimum": 0
+					}
+				}
+			},
+			"Station": {
+				"type": "object",
+				"required": ["location", "reach"],
+				"properties": {
+					"location": {
+						"$ref": "#/components/schemas/Location"
+					},
+					"reach": {
+						"type": "integer",
+						"required": true
+					}
+				}
+			}
+		}
+	}
+}

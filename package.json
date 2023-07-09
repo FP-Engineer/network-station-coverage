@@ -18,6 +18,7 @@
 		"url": "https://github.com/FP-Engineer/network-station-coverage.git"
 	},
 	"scripts": {
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"build": "lerna run build"
 	}
 }
