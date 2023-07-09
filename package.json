@@ -19,7 +19,12 @@
 	},
 	"scripts": {
 		"prepare": "husky install",
+		"lint": "lerna run lint",
+		"test": "lerna run test",
+		"test:coverage": "lerna run test:coverage",
 		"build": "lerna run build",
-		"lint": "lerna run lint"
+		"build:storybook": "yarn workspace network-monitor build:storybook",
+		"start:storybook": "yarn workspace network-monitor start:storybook",
+		"make:component:ui": "yarn workspace network-monitor make:component"
 	}
 }
