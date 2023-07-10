@@ -27,8 +27,9 @@ module.exports = {
 	moduleNameMapper: {
 		'\\.(css|less|scss|sass)$': 'identity-obj-proxy'
 	},
+	setupFilesAfterEnv: ['./jest.setup.ts'],
 	testEnvironment: 'jsdom',
 	transform: {
 		'\\.css\\.ts$': '@vanilla-extract/jest-transform',
-	}
+	},
 };
