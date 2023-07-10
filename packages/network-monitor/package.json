@@ -17,6 +17,7 @@
 	},
 	"dependencies": {
 		"@vanilla-extract/css": "^1.12.0",
+		"api-schemas": "workspace:^",
 		"lodash": "^4.17.21",
 		"normalize.css": "^8.0.1",
 		"react": "^18.2.0",
