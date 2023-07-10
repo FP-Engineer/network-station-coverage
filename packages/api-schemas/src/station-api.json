@@ -7,6 +7,7 @@
 	"paths": {
 		"/stations/": {
 			"get": {
+				"operationId": "GetStations",
 				"summary": "Get all stations",
 				"responses": {
 					"200": {

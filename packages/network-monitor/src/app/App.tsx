@@ -1,6 +1,6 @@
 import 'normalize.css';
 
-function App() {
+export function App() {
 
 	return null;
 }
