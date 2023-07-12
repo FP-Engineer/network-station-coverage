@@ -5,7 +5,7 @@
 		"title": "Station API"
 	},
 	"paths": {
-		"/stations/": {
+		"/stations": {
 			"get": {
 				"operationId": "GetStations",
 				"summary": "Get all stations",
@@ -17,8 +17,43 @@
 								"schema": {
 									"type": "array",
 									"items": {
-										"$ref": "#/components/schemas/Station"
-									}
+										"type": "object",
+										"required": [
+											"location",
+											"reach"
+										],
+										"properties": {
+											"location": {
+												"type": "object",
+												"required": [
+													"x",
+													"y"
+												],
+												"properties": {
+													"x": {
+														"type": "integer",
+														"minimum": 0
+													},
+													"y": {
+														"type": "integer",
+														"minimum": 0
+													}
+												}
+											},
+											"reach": {
+												"type": "integer"
+											}
+										}
+									},
+									"example": [
+										{
+											"location": {
+												"x": 0,
+												"y": 0
+											},
+											"reach": 0
+										}
+									]
 								}
 							}
 						}
@@ -31,7 +66,10 @@
 		"schemas": {
 			"Location": {
 				"type": "object",
-				"required": ["x", "y"],
+				"required": [
+					"x",
+					"y"
+				],
 				"properties": {
 					"x": {
 						"type": "integer",
@@ -45,14 +83,30 @@
 			},
 			"Station": {
 				"type": "object",
-				"required": ["location", "reach"],
+				"required": [
+					"location",
+					"reach"
+				],
 				"properties": {
 					"location": {
-						"$ref": "#/components/schemas/Location"
+						"type": "object",
+						"required": [
+							"x",
+							"y"
+						],
+						"properties": {
+							"x": {
+								"type": "integer",
+								"minimum": 0
+							},
+							"y": {
+								"type": "integer",
+								"minimum": 0
+							}
+						}
 					},
 					"reach": {
-						"type": "integer",
-						"required": true
+						"type": "integer"
 					}
 				}
 			}

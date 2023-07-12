@@ -1,9 +1,11 @@
 {
   "name": "api-schemas",
   "packageManager": "yarn@3.6.0",
-  "types": "index.d.ts",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./index.d.ts",
   "scripts": {
-    "build": "dtsgen --out ./index.d.ts ../api-schemas/src/*.json"
+    "build": "dtsgen ../api-schemas/src/*.json"
   },
   "devDependencies": {
     "dtsgenerator": "^3.18.0"
