@@ -1,5 +1,6 @@
 module.exports = {
-	preset: 'ts-jest/presets/js-with-ts',
+	preset: 'ts-jest',
+	automock: false,
 	testMatch: [
 		'<rootDir>/src/**/*.spec.{ts,tsx}',
 	],
@@ -28,7 +29,7 @@ module.exports = {
 		'\\.(css|less|scss|sass)$': 'identity-obj-proxy'
 	},
 	setupFilesAfterEnv: ['./jest.setup.ts'],
-	testEnvironment: 'jsdom',
+	testEnvironment: 'jest-environment-jsdom',
 	transform: {
 		'\\.css\\.ts$': '@vanilla-extract/jest-transform',
 	},
