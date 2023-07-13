@@ -16,6 +16,7 @@ module.exports = {
 		'!<rootDir>/src/**/*.css.ts',
 		'!<rootDir>/src/**/*.stories.*',
 		'!<rootDir>/**/index.ts',
+		'!<rootDir>/**/Constants.ts',
 	],
 	coverageThreshold: {
 		global: {

@@ -9,7 +9,7 @@
 		"build:mock": "vite build --mode mock",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"test": "env-cmd -f ./environments/.env.mock jest --maxWorkers=2",
-		"test:coverage": "jest --coverage --colors --maxWorkers=2 --passWithNoTests",
+		"test:coverage": "yarn test --coverage --colors --passWithNoTests",
 		"start:storybook": "storybook dev -p 6006",
 		"build:storybook": "storybook build",
 		"make:component": "npx scaffdog generate component"
