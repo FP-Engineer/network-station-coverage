@@ -6,18 +6,18 @@ import {
 	HTTPResponseHeader,
 } from './Constants';
 
-function handleError(res: Response) {
+export function handleError(res: Response) {
 	return res.ok ? res : Promise.reject(res.statusText);
 }
 
-function handleContentType(res: Response) {
+export function handleContentType(res: Response) {
 	const contentType = res.headers.get(HTTPResponseHeader.contentType) ?? '';
 	const hasJsonPayload = contentType.includes(ContentType.json);
 
 	return hasJsonPayload ? res.json() : Promise.reject(ErrorMessage.unsupportedContentType);
 }
 
-function request(url = '', settings: RequestInit = {}) {
+export function request(url: string, settings: RequestInit = {}) {
 	return fetch(url, {
 		...defaultRequestSettings,
 		...settings,
