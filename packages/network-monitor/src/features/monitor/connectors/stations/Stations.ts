@@ -1,7 +1,11 @@
 import 'api-schemas/index.d.ts';
 import { connectRemoteData } from '../../../../api-client';
+import type { RemoteDataConnector } from '../../../../api-client';
+
+const serviceUrl = process.env.STATIONS_SERVICE + '/stations';
 
 export type Station = Components.Schemas.Station;
 
-const serviceUrl = process.env.STATIONS_SERVICE + '/stations';
-export const useStations = connectRemoteData<Station[]>(serviceUrl);
+export type StationsConnector = RemoteDataConnector<Station[]>;
+
+export const useStations: StationsConnector = connectRemoteData<Station[]>(serviceUrl);

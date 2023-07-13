@@ -1,4 +1,5 @@
 import 'normalize.css';
+import '../src/app/App.css';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {

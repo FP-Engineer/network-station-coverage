@@ -1,4 +1,5 @@
 import 'normalize.css';
+import './App.css';
 
 export function App() {
 
