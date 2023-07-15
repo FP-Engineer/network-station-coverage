@@ -28,7 +28,9 @@
 		"test": "lerna run test",
 		"test:coverage": "lerna run test:coverage",
 		"build": "lerna run build",
+		"start": "lerna run start",
 		"build:mock": "lerna run build:mock",
+		"start:mock": "lerna run start:mock",
 		"build:storybook": "yarn workspace network-monitor build:storybook",
 		"start:storybook": "yarn workspace network-monitor start:storybook",
 		"make:component:ui": "yarn workspace network-monitor make:component"
