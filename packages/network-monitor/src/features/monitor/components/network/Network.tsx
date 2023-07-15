@@ -1,32 +1,13 @@
-import { container } from './Network.css';
-import type { StationsConnector } from '../../connectors';
-import { LoadingIndicator } from '../../../../components/loading-indicator';
-import { ErrorMessage } from '../../../../components/error-message';
 import { Station } from '../station';
+import { container } from './Network.css';
 
-export type Location = Components.Schemas.Location;
-
-export type Props = {
-	useStations: StationsConnector
+export interface Props {
+	stations: Components.Schemas.Station[],
 }
 
-export const Network: React.FC<Props> = ({ useStations }) => {
+export const Network: React.FC<Props> = ({ stations }) => {
 
-	const {
-		error,
-		isLoading,
-		data: stations,
-	} = useStations();
-
-	if (isLoading) {
-		return <LoadingIndicator />;
-	}
-
-	if (error) {
-		return <ErrorMessage>{ error }</ErrorMessage>
-	}
-
-	const locations: Location[] = stations?.map(({ location }) => location) ?? [];
+	const locations: Components.Schemas.Location[] = stations.map(({ location }) => location);
 	const maxX = Math.max(...locations.map(({ x }) => x));
 	const maxY = Math.max(...locations.map(({ y }) => y));
 

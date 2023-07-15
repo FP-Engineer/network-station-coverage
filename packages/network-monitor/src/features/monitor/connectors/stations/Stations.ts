@@ -1,8 +1,9 @@
 import 'api-schemas/index.d.ts';
 import { connectRemoteData } from '../../../../api-client';
 import type { RemoteDataConnector } from '../../../../api-client';
+import { networkDataServiceUrl } from '../../../../app/Constants';
 
-const serviceUrl = process.env.STATIONS_SERVICE + '/stations';
+const serviceUrl = networkDataServiceUrl + '/stations';
 
 export type Station = Components.Schemas.Station;
 

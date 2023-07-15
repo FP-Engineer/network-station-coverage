@@ -14,15 +14,12 @@ type Story = StoryObj<typeof meta>;
 
 export const NetworkStory: Story = {
 	args: {
-		useStations: () => ({
-			isLoading: false,
-			data: [{
-				location: {x: 0, y: 0},
-				reach: 1,
-			}, {
-				location: {x: 10, y: 10},
-				reach: 1,
-			}]
-		}),
+		stations: [{
+			location: {x: 0, y: 0},
+			reach: 1,
+		}, {
+			location: {x: 10, y: 10},
+			reach: 1,
+		}]
 	},
 };
