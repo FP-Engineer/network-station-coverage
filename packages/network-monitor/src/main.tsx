@@ -6,7 +6,7 @@ import App from './app/App.tsx';
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 if (import.meta.env.MODE === 'mock') {
-	const { default: worker } = await import('../mocks/browser.ts');
+	const { default: worker } = await import('./mocks/browser.ts');
 	worker.start();
 }
 
