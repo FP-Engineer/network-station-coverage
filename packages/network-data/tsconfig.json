@@ -1,0 +1,13 @@
+{
+	"extends": "../tsconfig.packages.json",
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"outDir": "./build",
+		"strict": true,
+		"esModuleInterop": true,
+		"moduleResolution": "NodeNext",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
+	}
+}
