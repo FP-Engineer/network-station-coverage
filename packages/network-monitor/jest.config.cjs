@@ -15,6 +15,7 @@ module.exports = {
 		'!<rootDir>/src/**/*.d.ts',
 		'!<rootDir>/src/**/*.css.ts',
 		'!<rootDir>/src/**/*.stories.*',
+		'!<rootDir>/src/mocks/*',
 		'!<rootDir>/**/index.ts',
 		'!<rootDir>/**/Constants.ts',
 	],
