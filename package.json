@@ -16,7 +16,8 @@
 		"lodash": "^4.17.21",
 		"nx": "^16.5.1",
 		"semantic-release": "^21.0.7",
-		"semantic-release-monorepo": "^7.0.5"
+		"semantic-release-monorepo": "^7.0.5",
+		"typescript": "^5.1.6"
 	},
 	"repository": {
 		"type": "git",
