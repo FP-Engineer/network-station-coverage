@@ -24,5 +24,11 @@ export const MonitorStory: Story = {
 				reach: 1,
 			}]
 		}),
+		useDevices: () => ({
+			isLoading: false,
+			data: [{
+				location: {x: 5, y: 5},
+			}]
+		}),
 	},
 };

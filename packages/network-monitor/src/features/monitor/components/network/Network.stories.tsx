@@ -20,6 +20,9 @@ export const NetworkStory: Story = {
 		}, {
 			location: {x: 10, y: 10},
 			reach: 1,
+		}],
+		devices: [{
+			location: {x: 5, y: 5}
 		}]
 	},
 };
