@@ -1,13 +1,47 @@
 {
 	"extends": "../tsconfig.packages.json",
+	"ts-node": {
+        "require": ["tsconfig-paths/register"]
+    },
+	"baseUrl": "./",
+    "paths": {
+      "@feature/*": ["./src/features/*/routes/index.ts"]
+    },
 	"compilerOptions": {
+		/* Basic Options */
+		"incremental": true,
 		"target": "ESNext",
 		"module": "ESNext",
-		"outDir": "./build",
+		"outDir": "build",
+	
+		/* Strict Type-Checking Options */
 		"strict": true,
-		"esModuleInterop": true,
-		"moduleResolution": "NodeNext",
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+	
+		/* Additional Checks */
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+	
+		/* Module Resolution Options */
+		"moduleResolution": "node",
+		"baseUrl": ".",
+		"esModuleInterop": true,		
+	
+		/* Experimental Options */
 		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true
-	}
+		"emitDecoratorMetadata": true,
+	
+		/* Advanced Options */
+		"forceConsistentCasingInFileNames": true,
+		"allowImportingTsExtensions": true,
+		"noEmit": true
+	  }
 }

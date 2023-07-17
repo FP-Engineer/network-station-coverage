@@ -14358,6 +14358,7 @@ __metadata:
     nodemon: ^3.0.1
     swagger-ui-express: ^5.0.0
     ts-node: ^10.9.1
+    tsconfig-paths: ^4.2.0
     tsoa: ^5.1.1
     typescript: ^5.1.6
   languageName: unknown
@@ -18596,7 +18597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^4.1.2":
+"tsconfig-paths@npm:^4.1.2, tsconfig-paths@npm:^4.2.0":
   version: 4.2.0
   resolution: "tsconfig-paths@npm:4.2.0"
   dependencies:
