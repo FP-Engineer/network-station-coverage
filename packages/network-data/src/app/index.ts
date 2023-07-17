@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import PingRouter from '../features/ping/routes';
+import PingRouter from '../features/ping/routes/index.ts';
 
 const PORT = process.env.PORT || 8000;
 
