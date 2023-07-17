@@ -5,14 +5,18 @@ describe('Network Test Suite', () => {
 
 	it('renders without crashing without data', () => {
 
-		render(<Network stations={[]} />);
+		render(<Network stations={[]} devices={[]} />);
 	});
 
 	it('renders without crashing with data', () => {
-
-		render(<Network stations={[{
+		const stations = [{
 			location: { x: 0, y: 0 },
 			reach: 0,
-		}]} />);
+		}];
+		const devices = [{
+			location: { x: 0, y: 0 },
+		}]
+
+		render(<Network stations={stations} devices={devices} />);
 	});
 });

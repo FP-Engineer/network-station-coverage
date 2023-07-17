@@ -1,0 +1,106 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Device API"
+	},
+	"paths": {
+		"/devices": {
+			"get": {
+				"operationId": "GetDevices",
+				"summary": "Get all devices",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"required": [
+											"location"
+										],
+										"properties": {
+											"location": {
+												"type": "object",
+												"required": [
+													"x",
+													"y"
+												],
+												"properties": {
+													"x": {
+														"type": "integer",
+														"minimum": 0
+													},
+													"y": {
+														"type": "integer",
+														"minimum": 0
+													}
+												}
+											}
+										}
+									},
+									"example": [
+										{
+											"location": {
+												"x": 0,
+												"y": 0
+											}
+										}
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Location": {
+				"type": "object",
+				"required": [
+					"x",
+					"y"
+				],
+				"properties": {
+					"x": {
+						"type": "integer",
+						"minimum": 0
+					},
+					"y": {
+						"type": "integer",
+						"minimum": 0
+					}
+				}
+			},
+			"Device": {
+				"type": "object",
+				"required": [
+					"location"
+				],
+				"properties": {
+					"location": {
+						"type": "object",
+						"required": [
+							"x",
+							"y"
+						],
+						"properties": {
+							"x": {
+								"type": "integer",
+								"minimum": 0
+							},
+							"y": {
+								"type": "integer",
+								"minimum": 0
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

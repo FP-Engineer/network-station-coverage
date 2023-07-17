@@ -1,13 +1,15 @@
+import { Device } from '../device';
 import { Station } from '../station';
 import { container } from './Network.css';
 
 export interface Props {
 	stations: Components.Schemas.Station[],
+	devices: Components.Schemas.Device[],
 }
 
-export const Network: React.FC<Props> = ({ stations }) => {
+export const Network: React.FC<Props> = ({ stations, devices }) => {
 
-	const locations: Components.Schemas.Location[] = stations.map(({ location }) => location);
+	const locations: Components.Schemas.Location[] = [...stations, ...devices].map(({ location }) => location);
 	const maxX = Math.max(...locations.map(({ x }) => x));
 	const maxY = Math.max(...locations.map(({ y }) => y));
 
@@ -25,6 +27,14 @@ export const Network: React.FC<Props> = ({ stations }) => {
 					gridRowStart: station.location.y,
 				}}>
 					<Station {...station} />
+				</span>
+			))}
+			{devices?.map((device) => (
+				<span style={{
+					gridColumnStart: device.location.x,
+					gridRowStart: device.location.y,
+				}}>
+					<Device {...device} />
 				</span>
 			))}
 		</div>
