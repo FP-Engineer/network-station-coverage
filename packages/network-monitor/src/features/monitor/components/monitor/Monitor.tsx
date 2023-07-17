@@ -1,30 +1,42 @@
 import { ErrorMessage } from '../../../../components/error-message';
 import { LoadingIndicator } from '../../../../components/loading-indicator';
 import { StationsConnector } from '../../connectors';
+import { DevicesConnector } from '../../connectors/devices';
 import { Network } from '../network';
 
 export type Props = {
 	useStations: StationsConnector;
+	useDevices: DevicesConnector;
 }
 
-export const Monitor: React.FC<Props> = ({ useStations }) => {
+export const Monitor: React.FC<Props> = ({ useStations, useDevices }) => {
 
 	const {
-		error,
-		isLoading,
+		error: stationsError,
+		isLoading: isLoadingStations,
 		data: stations,
 	} = useStations();
 
-	if (isLoading) {
+	const {
+		error: devicesError,
+		isLoading: isLoadingDevices,
+		data: devices,
+	} = useDevices();
+
+	if (isLoadingStations || isLoadingDevices) {
 		return <LoadingIndicator />;
 	}
 
-	if (stations) {
-		return <Network stations={stations} />;
+	if (stationsError) {
+		return <ErrorMessage>{ stationsError }</ErrorMessage>
 	}
 
-	if (error) {
-		return <ErrorMessage>{ error }</ErrorMessage>
+	if (devicesError) {
+		return <ErrorMessage>{ devicesError }</ErrorMessage>
+	}
+
+	if (stations && devices) {
+		return <Network stations={stations} devices={devices} />;
 	}
 
 	return null;
