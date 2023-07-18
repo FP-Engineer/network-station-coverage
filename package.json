@@ -43,5 +43,5 @@
 		"make:component:ui": "yarn workspace network-monitor make:component",
 		"release": "semantic-release"
 	},
-	"version": "0.0.0-development"
+	"version": "1.0.0"
 }
