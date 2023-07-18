@@ -2,6 +2,7 @@ import { ErrorMessage } from '../../../../components/error-message';
 import { LoadingIndicator } from '../../../../components/loading-indicator';
 import { StationsConnector } from '../../connectors';
 import { DevicesConnector } from '../../connectors/devices';
+import { createCoverageDecorator } from '../../decorators';
 import { Network } from '../network';
 
 export type Props = {
@@ -36,7 +37,11 @@ export const Monitor: React.FC<Props> = ({ useStations, useDevices }) => {
 	}
 
 	if (stations && devices) {
-		return <Network stations={stations} devices={devices} />;
+
+		const withCoverage = createCoverageDecorator(stations);
+		const decoratedDevices = devices.map(withCoverage);
+
+		return <Network stations={stations} devices={decoratedDevices} />;
 	}
 
 	return null;
