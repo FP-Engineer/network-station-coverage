@@ -1,7 +1,8 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import PingRouter from '../features/ping/routes/index.ts';
+import PingRouter from '../features/ping/routes/index.js';
+import StationsRouter from '../features/stations/routes/index.js';
 
 const PORT = process.env.PORT || 8000;
 
@@ -21,6 +22,7 @@ app.use(
 );
 
 app.use(PingRouter);
+app.use(StationsRouter);
 
 app.listen(PORT, () => {
 	console.log('Server is running on port', PORT);
