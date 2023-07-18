@@ -7,8 +7,8 @@
 	"scripts": {
 		"build": "tsc && vite build",
 		"start": "vite",
-		"build:mock": "vite build --mode mock",
 		"start:mock": "vite --mode mock",
+		"start:dev": "vite --mode dev",
 		"build:storybook": "storybook build",
 		"start:storybook": "storybook dev -p 6006",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
