@@ -26,6 +26,7 @@ describe('Monitor Test Suite', () => {
 	});
 
 	it('renders without crashing with data.', () => {
+
 		const stations: Station[] = [{
 			location: { x: 0, y: 0 },
 			reach: 0,

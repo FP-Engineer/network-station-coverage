@@ -30,6 +30,12 @@ declare namespace Paths {
              *       "x": 0,
              *       "y": 0
              *     }
+             *   },
+             *   {
+             *     "location": {
+             *       "x": 10,
+             *       "y": 10
+             *     }
              *   }
              * ]
              */
@@ -48,10 +54,10 @@ declare namespace Paths {
              * [
              *   {
              *     "location": {
-             *       "x": 0,
-             *       "y": 0
+             *       "x": 2,
+             *       "y": 2
              *     },
-             *     "reach": 0
+             *     "reach": 3
              *   }
              * ]
              */
