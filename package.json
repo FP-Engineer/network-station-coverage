@@ -35,6 +35,8 @@
 		"start:dev": "lerna run start:dev",
 		"build:storybook": "yarn workspace network-monitor build:storybook",
 		"start:storybook": "yarn workspace network-monitor start:storybook",
-		"make:component:ui": "yarn workspace network-monitor make:component"
-	}
+		"make:component:ui": "yarn workspace network-monitor make:component",
+		"release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo"
+	},
+	"version": "0.0.0-development"
 }
