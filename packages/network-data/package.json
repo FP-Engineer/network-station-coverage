@@ -2,6 +2,7 @@
 	"name": "network-data",
 	"packageManager": "yarn@3.6.0",
 	"type": "module",
+	"main": "dist/index.js",
 	"dependencies": {
 		"cors": "^2.8.5",
 		"express": "^4.18.2",
@@ -26,7 +27,7 @@
 		"prebuild": "npm run swagger",
 		"swagger": "tsoa spec",
 		"build": "tsc",
-		"start": "node build/index.js",
+		"start": "node dist/src/index.js",
 		"start:dev": "yarn dev",
 		"dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec\""
 	},

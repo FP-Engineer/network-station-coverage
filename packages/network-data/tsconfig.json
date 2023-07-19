@@ -3,16 +3,12 @@
 	"ts-node": {
         "require": ["tsconfig-paths/register"]
     },
-	"baseUrl": "./",
-    "paths": {
-      "@feature/*": ["./src/features/*/routes/index.ts"]
-    },
 	"compilerOptions": {
 		/* Basic Options */
 		"incremental": true,
 		"target": "ESNext",
 		"module": "ESNext",
-		"outDir": "build",
+		"outDir": "dist",
 	
 		/* Strict Type-Checking Options */
 		"strict": true,
@@ -41,7 +37,6 @@
 	
 		/* Advanced Options */
 		"forceConsistentCasingInFileNames": true,
-		"allowImportingTsExtensions": true,
-		"noEmit": true
-	  }
+	  },
+	  "include": ["src/**/*.ts"],
 }
