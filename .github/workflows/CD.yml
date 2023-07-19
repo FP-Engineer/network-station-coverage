@@ -59,9 +59,9 @@ jobs:
       - name: Build and push Docker image network data
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
-          build-args:
-            - PACKAGE: network-data
-            - PORT: 8000
+          build-args: |
+            PACKAGE=network-data
+            PORT=8000
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
@@ -69,9 +69,9 @@ jobs:
       - name: Build and push Docker image network monitor
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
-          build-args:
-            - PACKAGE: network-monitor
-            - PORT: 5173
+          build-args: |
+            PACKAGE=network-monitor
+            PORT=5173
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
