@@ -14,7 +14,7 @@ COPY ./packages/$PACKAGE/package.json packages/$PACKAGE/
 COPY ./packages/$PACKAGE packages/$PACKAGE
 
 # Install production dependencies using yarn
-RUN yarn --immutable --production
+RUN yarn install --immutable
 RUN yarn workspace $PACKAGE build
 
 # Expose the port on which the application will listen
