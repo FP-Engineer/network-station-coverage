@@ -41,7 +41,8 @@
 		"build:storybook": "yarn workspace network-monitor build:storybook",
 		"start:storybook": "yarn workspace network-monitor start:storybook",
 		"make:component:ui": "yarn workspace network-monitor make:component",
-		"release": "semantic-release"
+		"release": "semantic-release",
+		"package": "docker-compose build"
 	},
 	"version": "1.0.0"
 }
