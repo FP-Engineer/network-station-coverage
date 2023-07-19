@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  network-monitor:
+    container_name: network-monitor
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PACKAGE=network-monitor
+        - PORT=5173
+    ports:
+      - '9001:5173'
+  network-data:
+    container_name: network-data
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PACKAGE=network-data
+        - PORT=8000
+    ports:
+      - '9002:8000'
