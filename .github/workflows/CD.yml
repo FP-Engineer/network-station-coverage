@@ -2,7 +2,7 @@ name: CD
 
 on:
   push:
-    branches: ['main']
+    branches: ['main', 'debug/publish']
 
 env:
   REGISTRY: ghcr.io
@@ -30,19 +30,19 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install Dependencies
-        run: yarn install --immutable
-      - name: Lint code
-        run: yarn lint
-      - name: Test code with coverage
-        run: yarn test:coverage
-      - name: Build
-        run: yarn build
-      - name: Release application
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+      #- name: Install Dependencies
+      #  run: yarn install --immutable
+      #- name: Lint code
+      #  run: yarn lint
+      #- name: Test code with coverage
+      #  run: yarn test:coverage
+      #- name: Build
+      #  run: yarn build
+      #- name: Release application
+      #  env:
+      #    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #  run: yarn release
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
