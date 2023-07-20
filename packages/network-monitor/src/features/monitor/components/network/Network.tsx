@@ -23,16 +23,16 @@ export const Network: React.FC<Props> = ({ stations, devices }) => {
 		>
 			{stations?.map((station) => (
 				<span style={{
-					gridColumnStart: station.location.x,
-					gridRowStart: station.location.y,
+					gridColumnStart: station.location.x + 1,
+					gridRowStart: station.location.y + 1,
 				}}>
 					<Station {...station} />
 				</span>
 			))}
 			{devices?.map((device) => (
 				<span style={{
-					gridColumnStart: device.location.x,
-					gridRowStart: device.location.y,
+					gridColumnStart: device.location.x + 1,
+					gridRowStart: device.location.y + 1,
 				}}>
 					<Device {...device} />
 				</span>
