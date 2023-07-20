@@ -1,5 +1,5 @@
 # Use the official Node.js 14 image as the base image
-FROM node:19-alpine
+FROM node:latest
 ARG PACKAGE
 ARG PORT
 
