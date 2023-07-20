@@ -22,4 +22,4 @@ EXPOSE $PORT
 
 # Start the application
 ENV PACKAGE ${PACKAGE}
-CMD ["yarn", "workspace", "${PACKAGE}", "start"]
+CMD ["sh", "-c", "yarn workspace ${PACKAGE} start"]
