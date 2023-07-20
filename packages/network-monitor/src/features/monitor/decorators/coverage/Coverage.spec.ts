@@ -89,7 +89,6 @@ describe('Best Connection Test Suite', () => {
 		};
 		const expectedConnectionAt = { x: 0, y: 0 };
 
-		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		const { toStationAt } = determineBestConnection(stations, device)!;
 
 		expect(toStationAt).toEqual(expectedConnectionAt);
