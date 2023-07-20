@@ -9,7 +9,7 @@ WORKDIR /base
 # install dependecies
 COPY package.json .
 COPY yarn.lock .
-RUN yarn install --immutable
+RUN yarn
 
 # build sources
 COPY . .
