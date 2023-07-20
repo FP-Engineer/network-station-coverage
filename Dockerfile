@@ -21,5 +21,5 @@ RUN yarn workspace $PACKAGE build
 EXPOSE $PORT
 
 # Start the application
-ENV PACKAGE ${PACKAGE}
-CMD yarn workspace $PACKAGE start
+ENV PACKAGE=$PACKAGE
+CMD ["sh", "-c", "yarn workspace ${PACKAGE} start"]
