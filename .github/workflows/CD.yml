@@ -1,48 +1,28 @@
 name: CD
-
 on:
-  push:
-    branches: ['main']
+  release:
+    types: [published]
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  release:
-    permissions:
-      contents: write
-      issues: write
-      pages: write
-      pull-requests: write
-      deployments: write
-      id-token: write
+  publish:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - package: network-data
+            port: 8000
+          - package: network-monitor
+            port: 5173
+    permissions:
+      contents: read
+      packages: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 19
-      - name: Restore node modules cache
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install Dependencies
-        run: yarn install --immutable
-      - name: Lint code
-        run: yarn lint
-      - name: Test code with coverage
-        run: yarn test:coverage
-      - name: Build
-        run: yarn build
-      - name: Release application
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
@@ -53,25 +33,14 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: |
-            ${{ env.REGISTRY }}/network-data
-            ${{ env.REGISTRY }}/network-monitor
-      - name: Build and push Docker image network data
+          images: ${{ env.REGISTRY }}/fp-engineer/${{ matrix.package }}
+
+      - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           build-args: |
-            PACKAGE=network-data
-            PORT=8000
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-      - name: Build and push Docker image network monitor
-        uses: docker/build-push-action@v4
-        with:
-          build-args: |
-            PACKAGE=network-monitor
-            PORT=5173
+            PACKAGE=${{ matrix.package }}
+            PORT=${{ matrix.port }}
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
