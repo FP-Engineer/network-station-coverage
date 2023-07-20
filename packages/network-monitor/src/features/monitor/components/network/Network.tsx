@@ -17,8 +17,8 @@ export const Network: React.FC<Props> = ({ stations, devices }) => {
 		<div
 			className={ container }
 			style={{
-				gridTemplateColumns: `repeat(${maxX}, 1fr)`,
-				gridTemplateRows: `repeat(${maxY}, 1fr)`,
+				gridTemplateColumns: `repeat(${maxX}, auto)`,
+				gridTemplateRows: `repeat(${maxY}, auto)`,
 			}}
 		>
 			{stations?.map((station) => (
