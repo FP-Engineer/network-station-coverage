@@ -6,15 +6,13 @@ ARG PORT
 # Set the working directory inside the container
 WORKDIR /base
 
-# Copy dependecies
+# install dependecies
 COPY package.json .
 COPY yarn.lock .
-COPY ./packages/$PACKAGE/package.json packages/$PACKAGE/
-
-COPY ./packages/$PACKAGE packages/$PACKAGE
-
-# Install production dependencies using yarn
 RUN yarn install --immutable
+
+# build sources
+COPY . .
 RUN yarn workspace $PACKAGE build
 
 # Expose the port on which the application will listen
