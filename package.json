@@ -1,6 +1,7 @@
 {
 	"name": "network-station-coverage",
 	"type": "module",
+	"private": true,
 	"workspaces": [
 		"packages/*"
 	],
