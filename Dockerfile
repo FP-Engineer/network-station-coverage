@@ -3,7 +3,7 @@ ARG PACKAGE
 ARG PORT
 ENV NODE_ENV=production
 
-WORKDIR /base
+WORKDIR /base/${PACKAGE}
 
 COPY package.json .
 COPY yarn.lock .
