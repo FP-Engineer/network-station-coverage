@@ -3,7 +3,7 @@ name: analyze
 on: push
 
 jobs:
-  test-lint-build:
+  analyze:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
