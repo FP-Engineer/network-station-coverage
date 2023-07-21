@@ -1,10 +1,11 @@
 import { Device } from '../device';
 import { Station } from '../station';
 import { container } from './Network.css';
+import { NetworkItem } from './NetworkItem';
 
 export interface Props {
-	stations: Components.Schemas.Station[],
-	devices: Components.Schemas.Device[],
+	stations: Components.Schemas.Station[];
+	devices: Components.Schemas.Device[];
 }
 
 export const Network: React.FC<Props> = ({ stations, devices }) => {
@@ -22,20 +23,14 @@ export const Network: React.FC<Props> = ({ stations, devices }) => {
 			}}
 		>
 			{stations?.map((station) => (
-				<span style={{
-					gridColumnStart: station.location.x + 1,
-					gridRowStart: station.location.y + 1,
-				}}>
+				<NetworkItem location={station.location}>
 					<Station {...station} />
-				</span>
+				</NetworkItem>
 			))}
 			{devices?.map((device) => (
-				<span style={{
-					gridColumnStart: device.location.x + 1,
-					gridRowStart: device.location.y + 1,
-				}}>
+				<NetworkItem location={device.location}>
 					<Device {...device} />
-				</span>
+				</NetworkItem>
 			))}
 		</div>
 	);
