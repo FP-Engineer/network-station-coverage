@@ -2,8 +2,6 @@ import { style } from '@vanilla-extract/css';
 
 export const summary = style({
 	display: 'inline-block',
-	inlineSize: '3rem',
-	aspectRatio: '1',
 });
 
 export const details = style({
@@ -16,9 +14,10 @@ export const details = style({
 export const info = style({
 	position: 'absolute',
 	backgroundColor: '#EEE',
-	inlineSize: 'fit-content',
+	inlineSize: 'max-content',
 	borderRadius: '3px',
 	listStyle: 'none',
 	margin: '0',
 	padding: '0.25rem',
+	zIndex: '9001',
 });
