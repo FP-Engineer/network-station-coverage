@@ -1,6 +1,7 @@
 name: publish
 on:
-  branches: ['debug-ci']
+  push:
+    branches: ['debug-ci']
 
 env:
   REGISTRY: ghcr.io
