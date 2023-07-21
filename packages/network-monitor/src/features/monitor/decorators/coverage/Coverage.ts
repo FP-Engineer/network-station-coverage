@@ -5,15 +5,15 @@ type Stations = Components.Schemas.Station[];
 type Device = Components.Schemas.Device;
 type Location = Components.Schemas.Location;
 
-export interface ICoverageDecorator {
+export interface CoverageDecorator {
 	(device: Components.Schemas.Device): DeviceViewModel
 }
 
-export interface ICoverageFactory {
-	(stations: Stations): ICoverageDecorator;
+export interface CoverageFactory {
+	(stations: Stations): CoverageDecorator;
 }
 
-export interface IConnection {
+export interface Connection {
 	toStationAt: Location,
 	withSpeed: number,
 }
@@ -39,27 +39,27 @@ export function calculateSpeed(lhs: Device, rhs: Station): number {
 	return speed;
 }
 
-export function determineBestConnection(stations: Stations, device: Device): IConnection | null {
+export function determineBestConnection(stations: Stations, device: Device): Connection | null {
 
 	const calculateSpeedToStation = (station: Station) => calculateSpeed(device, station);
-	const createConnection = (station: Station): IConnection => ({
+	const createConnection = (station: Station): Connection => ({
 		toStationAt: station.location,
 		withSpeed: calculateSpeedToStation(station)
 	});
-	const sortBySpeed = (lhs: IConnection, rhs: IConnection) => rhs.withSpeed - lhs.withSpeed;
-	const connections: IConnection[] = stations.map(createConnection);
-	const sortedConnections: IConnection[] = connections.sort(sortBySpeed);
-	const functionalConnections: IConnection[] = sortedConnections.filter(({ withSpeed }) => withSpeed > 0);
+	const sortBySpeed = (lhs: Connection, rhs: Connection) => rhs.withSpeed - lhs.withSpeed;
+	const connections: Connection[] = stations.map(createConnection);
+	const sortedConnections: Connection[] = connections.sort(sortBySpeed);
+	const functionalConnections: Connection[] = sortedConnections.filter(({ withSpeed }) => withSpeed > 0);
 	const bestConnectionOptional = functionalConnections[0] ?? null;
 
 	return bestConnectionOptional;
 }
 
-export const createCoverageDecorator: ICoverageFactory = (stations: Stations) => {
+export const createCoverageDecorator: CoverageFactory = (stations: Stations) => {
 
 	return (device: Components.Schemas.Device) => {
 
-		const connection: IConnection | null = determineBestConnection(stations, device);
+		const connection: Connection | null = determineBestConnection(stations, device);
 
 		return {
 			...device,
