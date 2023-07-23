@@ -8,9 +8,9 @@ services:
       dockerfile: Dockerfile
       args:
         - PACKAGE=network-monitor
-        - PORT=5173
+        - PORT=8001
     ports:
-      - '9001:5173'
+      - '9002:8001'
   network-data:
     container_name: network-data
     build:
@@ -20,4 +20,4 @@ services:
         - PACKAGE=network-data
         - PORT=8000
     ports:
-      - '9002:8000'
+      - '9001:8000'
