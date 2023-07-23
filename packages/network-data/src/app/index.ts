@@ -7,6 +7,7 @@ import DevicesRouter from '../features/devices/routes/index.js';
 import cors from 'cors';
 
 const PORT = 8000;
+const HOST = '0.0.0.0';
 const app: Application = express();
 
 app.use(express.json());
@@ -27,6 +28,6 @@ app.use(PingRouter);
 app.use(StationsRouter);
 app.use(DevicesRouter);
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
 	console.log('Server is running on port', PORT);
 });
