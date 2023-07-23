@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite';
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import react from '@vitejs/plugin-react-swc';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
-export default ({ mode }) => {
+export default async ({ mode }) => {
 
 	const plugins = [
 		react(),
@@ -12,6 +11,9 @@ export default ({ mode }) => {
 	const options = {};
 
 	if (mode === 'mock') {
+
+		const { nodePolyfills } = await import('vite-plugin-node-polyfills');
+
 		plugins.push(
 			nodePolyfills({
 				exclude: [
@@ -36,6 +38,10 @@ export default ({ mode }) => {
 	return defineConfig({
 		plugins,
 		envDir: './environments',
+		server: {
+			host: true,
+			port: 8001,
+		},
 		...options,
 	});
 }
