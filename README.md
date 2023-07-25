@@ -70,6 +70,14 @@ This environment serves to develop the system running on your local machine. To 
 yarn start:dev
 ```
 
+#### environment: production
+
+This environment represents the containerized system as it's meant to be deployt to a cloud platform. To start the network-station-coverage service execute the following command.
+
+```bash
+yarn start
+```
+
 ## quality goals
 
 The main quality attribute respected throughout the development of this project was maintainability. To achieve this the following aspects were considered.
