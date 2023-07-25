@@ -19,9 +19,9 @@
 		"@semantic-release/npm": "^10.0.4",
 		"@semantic-release/release-notes-generator": "^11.0.4",
 		"husky": "^8.0.3",
-		"lerna": "^7.1.3",
+		"lerna": "^7.1.4",
 		"lodash": "^4.17.21",
-		"nx": "^16.5.1",
+		"nx": "^16.5.5",
 		"semantic-release": "^21.0.7",
 		"typescript": "^5.1.6"
 	},
