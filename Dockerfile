@@ -4,7 +4,6 @@ ARG PORT
 
 WORKDIR /base
 
-# Dependecies
 COPY . .
 RUN yarn plugin import workspace-tools
 RUN yarn workspaces focus $PACKAGE --production
