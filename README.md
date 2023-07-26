@@ -72,7 +72,11 @@ yarn start:dev
 
 #### environment: production
 
-This environment represents the containerized system as it's meant to be deployt to a cloud platform. To start the network-station-coverage service execute the following command.
+This environment represents the containerized system as it's meant to be deployt to a cloud platform. To start the network-station-coverage service execute the following commands.
+
+```bash
+yarn build
+```
 
 ```bash
 yarn start
