@@ -10,6 +10,14 @@
       "StackName": "amplify-networkcoverage-dev-221104",
       "StackId": "arn:aws:cloudformation:eu-north-1:496034212766:stack/amplify-networkcoverage-dev-221104/387dc7d0-2f15-11ee-b918-0e2a888dc61e",
       "AmplifyAppId": "d1ewipdq1m59ln"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1ewipdq1m59ln",
+          "type": "manual"
+        }
+      }
     }
   }
 }
