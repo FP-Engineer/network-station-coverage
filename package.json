@@ -37,6 +37,7 @@
 		"build": "lerna run build",
 		"build:storybook": "yarn workspace network-monitor build:storybook",
 		"build:mock": "lerna run build:mock",
+		"start": "lerna run start:dev",
 		"start:mock": "lerna run start:mock",
 		"start:dev": "lerna run start:dev",
 		"start:prod": "docker-compose up",

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-networkcoverage-dev-221104-authRole",
+      "UnauthRoleArn": "arn:aws:iam::496034212766:role/amplify-networkcoverage-dev-221104-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::496034212766:role/amplify-networkcoverage-dev-221104-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-networkcoverage-dev-221104-deployment",
+      "UnauthRoleName": "amplify-networkcoverage-dev-221104-unauthRole",
+      "StackName": "amplify-networkcoverage-dev-221104",
+      "StackId": "arn:aws:cloudformation:eu-north-1:496034212766:stack/amplify-networkcoverage-dev-221104/387dc7d0-2f15-11ee-b918-0e2a888dc61e",
+      "AmplifyAppId": "d1ewipdq1m59ln"
+    }
+  }
+}
