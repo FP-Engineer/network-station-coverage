@@ -2,6 +2,23 @@
 
 This monorepository consists of three related projects that ensamble a system dedicated to determine the networkspeed available to certain devices within a network of stations.
 
+![Alt text](/assets/monitor.png)
+
+
+## TL;DR
+
+Prerequisites: yarn; docker
+
+To start the project the following commands in a terminal:
+
+```bash
+yarn install
+yarn build
+yarn start:prod
+```
+
+Then follow this link: [http://localhost:9002/](http://localhost:9002/)
+
 ## system architecture
 
 ```mermaid
