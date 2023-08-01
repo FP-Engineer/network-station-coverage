@@ -46,5 +46,5 @@
 		"release": "semantic-release",
 		"package": "docker-compose build"
 	},
-	"version": "1.2.0"
+	"version": "1.2.1"
 }
