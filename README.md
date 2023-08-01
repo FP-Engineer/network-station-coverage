@@ -70,6 +70,8 @@ This environment serves to develop the system running on your local machine. To 
 yarn start:dev
 ```
 
+After the services launched the network-monitor-service is available [here](http://localhost:8001/).
+
 #### environment: production
 
 This environment represents the containerized system as it's meant to be deployt to a cloud platform. To start the network-station-coverage service execute the following commands.
