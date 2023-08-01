@@ -9,7 +9,7 @@ This monorepository consists of three related projects that ensamble a system de
 
 Prerequisites: yarn; docker
 
-To start the project the following commands in a terminal:
+To start the project run the following commands in a terminal:
 
 ```bash
 yarn install
