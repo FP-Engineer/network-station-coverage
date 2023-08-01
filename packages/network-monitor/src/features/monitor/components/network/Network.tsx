@@ -23,12 +23,12 @@ export const Network: React.FC<Props> = ({ stations, devices }) => {
 			}}
 		>
 			{stations?.map((station) => (
-				<NetworkItem location={station.location}>
+				<NetworkItem key={`station_${station.location.x}_${station.location.y}`} location={station.location}>
 					<Station {...station} />
 				</NetworkItem>
 			))}
 			{devices?.map((device) => (
-				<NetworkItem location={device.location}>
+				<NetworkItem key={`device${device.location.x}_${device.location.y}`} location={device.location}>
 					<Device {...device} />
 				</NetworkItem>
 			))}
